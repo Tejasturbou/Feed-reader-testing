@@ -4,8 +4,8 @@ This project is a web-based application that reads RSS feeds. The main objective
 
 ## Run this Application
 
-* Clone this [repository]() .....or.....
-* Test it Online: [Feed Reader]()
+* Clone this [repository](https://github.com/Tejasturbou/Feed-reader-testing) .....or.....
+* Test it Online: [Feed Reader](https://tejasturbou.github.io/Feed-reader-testing/)
 
 ## Test's Implemented
 
