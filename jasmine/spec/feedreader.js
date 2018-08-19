@@ -94,15 +94,16 @@ $(function() {
             $('.feed').empty();
             loadFeed(0, function(){
                 before = $('.feed').html();
-                // console.log($('.feed').html());
+                // console.log(before);
                 loadFeed(1, done);
             });
         });
 
 
         it('When new feed is loaded the content changes', function(){
-            // console.log($('.feed').html());
-            expect($('.feed').html()).not.toEqual(before);
+            after = $('.feed').html();
+            // console.log(after);
+            expect(after).not.toEqual(before);
         });
 
     });
