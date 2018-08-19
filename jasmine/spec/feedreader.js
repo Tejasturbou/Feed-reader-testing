@@ -73,14 +73,11 @@ $(function() {
          */
 
         beforeEach(function(done){
-            loadFeed(0 ,function(){
-                done();
-            });
+            loadFeed(0, done);
         });
 
-        it('atleast a single .entry element within the .feed container', function(done){
-            expect($('.entry').hasClass('entry')).toBe(true);
-            done();
+        it('atleast a single .entry element within the .feed container', function(){
+            expect($('.feed .entry').length).toBeGreaterThan(0);
         });
     });
 
@@ -88,29 +85,24 @@ $(function() {
     /* A test suite named "New Feed Selection" */
     describe('New Feed Selection', function(){
 
-
+        let before, after;
         /* A test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          */
         beforeEach(function(done){
-            let status = "not changed";
+
             $('.feed').empty();
-            // console.log($('.feed').children().length);
             loadFeed(0, function(){
-                done();
+                before = $('.feed').html();
+                // console.log($('.feed').html());
+                loadFeed(1, done);
             });
         });
 
 
-        it('When new feed is loaded the content changes', function(done){
-
-            if($('.feed').children().length > 0){
-                status = "changed";
-                // console.log($('.feed').children().length);
-            }
-
-            expect(status).toEqual('changed');
-            done();
+        it('When new feed is loaded the content changes', function(){
+            // console.log($('.feed').html());
+            expect($('.feed').html()).not.toEqual(before);
         });
 
     });
